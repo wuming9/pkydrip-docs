@@ -10,3 +10,14 @@ markup:
   goldmark:
     renderer:
       unsafe: true
+
+outputs:
+  home:
+    - HTML
+  section:
+    - HTML
+  page:
+    - HTML
+
+disableKinds:
+  - RSS
