@@ -1,0 +1,5 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+{{ with .Params.description }}<p class="meta">{{ . }}</p>{{ end }}
+<article>{{ .Content }}</article>
+{{ end }}
