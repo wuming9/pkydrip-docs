@@ -1,0 +1,12 @@
+baseURL: "https://wuming9.github.io/pkydrip-docs/"
+languageCode: "en-us"
+title: "PKYDrip Engineering Docs"
+enableRobotsTXT: true
+
+params:
+  description: "PKYDrip technical documentation, integration guides, protocols, and system architecture."
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
