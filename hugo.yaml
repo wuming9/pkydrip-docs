@@ -1,10 +1,32 @@
 baseURL: "https://wuming9.github.io/pkydrip-docs/"
-languageCode: "en-us"
-title: "PKYDrip Engineering Docs"
+languageCode: "zh-cn"
+title: "PKYDrip 文档与业务站"
 enableRobotsTXT: true
 
 params:
-  description: "PKYDrip technical documentation, integration guides, protocols, and system architecture."
+  description: "PKYDrip 产品介绍、场景方案、案例与工程文档。"
+  tagline: "从业务价值到技术落地的一站式信息门户"
+
+menu:
+  main:
+    - name: "首页"
+      url: "./"
+      weight: 10
+    - name: "解决方案"
+      url: "./solutions/"
+      weight: 20
+    - name: "客户案例"
+      url: "./cases/"
+      weight: 30
+    - name: "架构文档"
+      url: "./architecture/"
+      weight: 40
+    - name: "内容简报"
+      url: "./project-brief/"
+      weight: 50
+    - name: "联系我们"
+      url: "./contact/"
+      weight: 60
 
 markup:
   goldmark:
@@ -12,12 +34,12 @@ markup:
       unsafe: true
 
 outputs:
-  home:
-    - HTML
-  section:
-    - HTML
-  page:
-    - HTML
+  home: [HTML]
+  section: [HTML]
+  page: [HTML]
 
 disableKinds:
   - RSS
+
+relativeURLs: true
+canonifyURLs: false

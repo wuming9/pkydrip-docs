@@ -1,0 +1,31 @@
+{{ define "main" }}
+<article class="home-content">{{ .Content }}</article>
+
+<section class="card" style="margin:16px 0; background:#f8fbff;">
+  <h2 style="margin-top:0;">首页已升级（可见性标记）</h2>
+  <p class="meta">如果你看到这段文字，说明你访问的是新版首页模板，而不是旧的默认列表页。</p>
+</section>
+
+<section>
+  <h2>栏目导航</h2>
+  <div class="card-grid">
+    {{ range .Site.Menus.main }}
+      {{ if ne .Name "首页" }}
+      <div class="card">
+        <h3><a href="{{ .URL }}">{{ .Name }}</a></h3>
+        <p class="meta">{{ with .Page }}{{ .Params.description }}{{ else }}进入 {{ .Name }} 页面{{ end }}</p>
+      </div>
+      {{ end }}
+    {{ end }}
+  </div>
+</section>
+
+<section>
+  <h2>最新内容</h2>
+  <ul>
+    {{ range first 6 (where .Site.RegularPages "Type" "!=" "") }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ with .Params.description }} — <span class="meta">{{ . }}</span>{{ end }}</li>
+    {{ end }}
+  </ul>
+</section>
+{{ end }}

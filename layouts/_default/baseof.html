@@ -1,30 +1,42 @@
 <!doctype html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>{{ if .Title }}{{ .Title }} | {{ end }}{{ .Site.Title }}</title>
   <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;line-height:1.6;margin:0;color:#111}
-    header,main,footer{max-width:1000px;margin:0 auto;padding:18px}
-    header{border-bottom:1px solid #eee}
-    nav a{margin-right:12px;text-decoration:none;color:#0366d6}
-    nav a:hover{text-decoration:underline}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;line-height:1.65;margin:0;color:#111;background:#fff}
+    .wrap{max-width:1080px;margin:0 auto;padding:18px}
+    .notice{background:#ffefc2;border-bottom:1px solid #e6d08a;color:#6d5200;font-weight:700}
+    header{border-bottom:1px solid #eee;background:#fff;position:sticky;top:0}
+    .top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+    .brand{font-weight:800;font-size:20px}
+    .sub{font-size:13px;color:#666}
+    nav a{margin-right:10px;text-decoration:none;color:#0366d6;padding:6px 8px;border-radius:6px}
+    nav a:hover{background:#f0f6ff}
     .meta{color:#666;font-size:14px}
-    ul{padding-left:20px}
-    pre{background:#f6f8fa;padding:12px;border-radius:8px;overflow:auto}
+    .card{border:1px solid #ececec;border-radius:10px;padding:14px;margin:10px 0}
     footer{border-top:1px solid #eee;color:#666;font-size:13px}
   </style>
 </head>
 <body>
+  <div class="notice"><div class="wrap">🚀 首页升级标记：2026-05-25 / v3（如果你看不到这行，线上仍是旧版本）</div></div>
   <header>
-    <div class="meta">{{ .Site.Title }}</div>
-    <nav>
-      <a href="{{ .Site.BaseURL }}">Home</a>
-      <a href="{{ .Site.BaseURL }}architecture/">Architecture</a>
-    </nav>
+    <div class="wrap top">
+      <div>
+        <div class="brand">PKYDrip 文档与业务站 v3</div>
+        <div class="sub">业务介绍 + 方案页 + 案例页 + 工程文档</div>
+      </div>
+      <nav>
+        <a href="{{ .Site.BaseURL }}">首页</a>
+        <a href="{{ .Site.BaseURL }}solutions/">解决方案</a>
+        <a href="{{ .Site.BaseURL }}cases/">客户案例</a>
+        <a href="{{ .Site.BaseURL }}architecture/">架构文档</a>
+        <a href="{{ .Site.BaseURL }}contact/">联系我们</a>
+      </nav>
+    </div>
   </header>
-  <main>{{ block "main" . }}{{ end }}</main>
-  <footer>© {{ now.Year }} PKYDrip — Engineering Docs</footer>
+  <main class="wrap">{{ block "main" . }}{{ end }}</main>
+  <footer><div class="wrap">© {{ now.Year }} PKYDrip — v3</div></footer>
 </body>
 </html>
